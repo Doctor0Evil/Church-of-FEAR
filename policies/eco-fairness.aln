@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "grace_equity_kernel": {
+    "resource_kind": "power_budget", 
+    "normalization": "fraction_of_total",
+    "classes": [
+      {
+        "name": "host",
+        "min_share": 0.10,
+        "max_share": 0.40,
+        "description": "Local OrganicCPU host, baseline comfort and safety."
+      },
+      {
+        "name": "mentor",
+        "min_share": 0.05,
+        "max_share": 0.25,
+        "description": "Mentors supporting learners and remote congregations."
+      },
+      {
+        "name": "learner",
+        "min_share": 0.10,
+        "max_share": 0.30,
+        "description": "Learners and study groups, primary equity focus."
+      },
+      {
+        "name": "remote_congregation",
+        "min_share": 0.05,
+        "max_share": 0.25,
+        "description": "Remote congregations participating via low-bandwidth XR."
+      },
+      {
+        "name": "researcher",
+        "min_share": 0.00,
+        "max_share": 0.20,
+        "description": "Background research tasks, never allowed to dominate."
+      }
+    ],
+    "node_routes": [
+      {
+        "route": "AUTO_CHURCH_SIM",
+        "max_power_fraction": 0.60,
+        "max_compute_fraction": 0.60
+      },
+      {
+        "route": "AUTO_CHURCH_LIVE",
+        "max_power_fraction": 0.80,
+        "max_compute_fraction": 0.80
+      }
+    ]
+  }
+}
