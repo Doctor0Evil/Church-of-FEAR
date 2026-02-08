@@ -1,0 +1,20 @@
+name: Eco Fairness CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  eco-fairness-invariants:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Build ecofairness-guard
+        run: cargo build -p ecofairness-guard --all-targets --locked
+
+      - name: Run eco-fairness invariant tests
+        run: cargo test -p ecofairness-guard --tests -- --nocapture
