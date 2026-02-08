@@ -1,0 +1,25 @@
+[workspace]
+members = [
+    "crates/ac_aln_rt",
+    "crates/ac_git_orchestrator",
+    "crates/ac_aln_integration",
+    "crates/ac_devops_api",
+]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+redis = { version = "0.25", features = ["tokio-comp"] }
+tokio-postgres = { version = "0.7", features = ["with-uuid-1"] }  # async Postgres client [web:7]
+uuid = { version = "1.4", features = ["v4"] }
+thiserror = "1.0"
+regex = "1.10"
+warp = "0.3"                        # async HTTP framework [web:10]
+tracing = "0.1"
+tracing-subscriber = "0.3"
