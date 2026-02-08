@@ -1,4 +1,3 @@
-// crates/ac_topology_model/src/branch.rs
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
