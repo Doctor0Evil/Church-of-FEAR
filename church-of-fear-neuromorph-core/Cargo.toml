@@ -1,0 +1,15 @@
+[package]
+name = "church-of-fear-neuromorph-core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Non-predatory, host-sovereign neuromorphic evolution core under Church-of-FEAR doctrine."
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+
+# These should point at your existing workspace crates
+biophysical-blockchain = { path = "../biophysical-blockchain" }
+augdoctor-neuromorph-core = { path = "../augdoctor-neuromorph-core" }
