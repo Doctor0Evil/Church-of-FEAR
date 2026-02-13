@@ -1,0 +1,16 @@
+version 1.0
+schema church-of-fear.neuromorph.eco-profile
+hostid bostrom18sd2ujv24ual9c9pshtxys6j8knh6xaead9ye7
+
+eco-band-profile
+  bandname Fair
+  maxflopspertask 150000
+  maxenergynj 1.0
+  band
+
+doctrine
+  nonpredatory true
+  crosshostflowsallowed false
+  financializationallowed false
+  allowsstructuralcaps false
+  description "Eco profile for non-predatory, fairness-only neuromorphic evolution under Church-of-FEAR."
