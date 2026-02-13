@@ -1,0 +1,34 @@
+[package]
+name = "church_of_fear_ledger"
+version = "0.1.0"
+edition = "2021"
+description = "Immutable, append-only, hash-chained moral ledger for the Church-of-FEAR observer layer. Tracks good deeds, ecological impact, and life-harm for transparent CHURCH token recommendations and Auto_Church accountability. Fully non-actuating, read-only, and ALN-policy compliant."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Doctor0Evil/Church-of-FEAR/tree/main/ledger"
+keywords = ["church-of-fear", "moral-ledger", "ecological-sustainability", "biophysical-blockchain", "tree-of-life"]
+categories = ["cryptography", "data-structures", "science"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+uuid = { version = "1.8", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "1.0"
+hex = "0.4"
+log = "0.4"
+env_logger = "0.11"
+
+# Best-in-class crypto & safety
+ed25519-dalek = { version = "2.1", features = ["serde"] }   # future-proof signing of deeds
+blake3 = "1.5"                                              # post-quantum ready alternative hash
+zeroize = { version = "1.8", features = ["derive"] }        # secure memory
+
+# Optional XR-grid visualization (bevy 0.14 + wgpu for wonders-of-the-world rendering)
+# Uncomment for full immersive Tree-of-Life ledger viewer
+# bevy = { version = "0.14", optional = true, features = ["dynamic_linking"] }
+
+[features]
+default = ["std"]
+std = []
+visualizer = ["bevy"]
