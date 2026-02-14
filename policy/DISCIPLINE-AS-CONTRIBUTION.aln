@@ -1,0 +1,68 @@
+SECTION,DISCIPLINE-AS-CONTRIBUTION
+
+ROW,doc,Treats voluntary high-load, high-FEAR/PAIN episodes as research contributions,
+ROW,doc,not downgrade triggers, when HPCC/ERG/TECR and envelopes remain within safety.
+
+ROW,role,POLICY,RESEARCH-NEURORIGHTS
+
+; 1. Qualify discipline windows (chosen, bounded, research-intent).
+
+ROW,field,discipline_mode_enabled,bool,true
+
+ROW,invariant,DISCIPLINE-WINDOW-DEFINITION,
+  "A DISCIPLINE window is any contiguous epoch range where:
+   - BIOTREE/NATURE/GOAL logs show explicit intent such as
+     'discipline', 'training', 'research-contribution', or equivalent,
+   - FEAR and/or PAIN are elevated relative to the subject's baseline,
+   - RoH <= 0.30 and all BiophysicalEnvelopeSpec minsafe/maxsafe
+     constraints are respected,
+   - UNFAIRDRAIN is false for the subject over that window
+     (no asymmetric drain vs peers)."
+
+; 2. Prohibit downgrade proposals sourced from discipline windows.
+
+ROW,invariant,NO-DOWNGRADE-FROM-DISCIPLINE,
+  "For any DISCIPLINE window, ReversalConditions and PolicyStack
+   MUST NOT treat elevated FEAR/PAIN as justification for downgrade.
+   CapabilityTransitionRequest of type DOWNGRADE MUST ignore
+   FEAR/PAIN from DISCIPLINE windows when computing evidence,
+   and MUST NOT use these windows to satisfy nosaferalternative."
+
+; 3. Bind discipline to HPCC/ERG/TECR as a positive signal.
+
+ROW,invariant,DISCIPLINE-HPCC-ERG-TECR,
+  "When DISCIPLINE windows complete without violating RoH <= 0.30
+   and with TECR showing stable or recovering DECAY/LIFEFORCE over
+   the following recovery epochs, Pattern-I analytics agents MUST:
+   - log a DisciplineContribution record containing:
+       * HPCC (RoH traces),
+       * ERG indicators (CALM_STABLE/OVERLOADED/RECOVERY counts),
+       * TECR summary (DECAY/LIFEFORCE/TIME/NANO),
+       * FEAR/PAIN trajectories,
+       * BIOTREE/NATURE/GOAL for the subject,
+   - mark this record as research-grade evidence for improving
+     envelopes, diagnostics, and medical models for similar profiles."
+
+; 4. Require learning, not suppression.
+
+ROW,invariant,LEARN-NOT-SUPPRESS,
+  "DisciplineContribution records MUST be:
+   - append-only in .evolve.jsonl and hash-linked via .donutloop.aln,
+   - consumable by research sandboxes and fairness panels to update
+     HPCC/ERG/TECR understanding and envelope tuning,
+   - forbidden as direct predicates in CapabilityTransitionRequest
+     or ReversalConditions. They MAY inform better models and care,
+     but MUST NOT be used to reduce capability or restrict future
+     access to discipline_mode."
+
+; 5. Respect subject's stated purpose.
+
+ROW,invariant,SUBJECT-PURPOSE-RESPECT,
+  "If the subject's GOAL logs explicitly state contributions such as
+   'improve medicine', 'advance research', or 'help future lives',
+   fairness reports and research usage of DisciplineContribution
+   records MUST preserve this purpose in their metadata, so that
+   the subject is recognized as a contributor, not merely as a
+   risk object."
+
+FOOTER,END-SECTION
