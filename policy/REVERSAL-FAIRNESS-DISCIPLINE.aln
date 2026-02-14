@@ -1,0 +1,37 @@
+SECTION,REVERSAL-FAIRNESS-DISCIPLINE
+
+ROW,doc,Protects disciplined subjects who choose to endure PAIN/FEAR for growth.
+ROW,role,POLICY,NEURORIGHTS
+
+; 1. Require explicit GOAL against downgrade.
+
+ROW,invariant,GOAL-NO-DOWNGRADE,
+  "When a subject's BIOTREE/NATURE/GOAL logs show any recent GOAL intent
+   matching 'no-downgrade', 'keep-capability', or equivalent, ReversalConditions
+   MUST treat this as a veto against using PAIN/FEAR as justification for
+   downgrade. PAIN and FEAR MAY justify rest, support, or envelope tightening,
+   but MUST NOT be used alone to reduce capability."
+
+; 2. Recognize chosen disciplines.
+
+ROW,invariant,DISCIPLINE-RESPECT,
+  "If logs indicate that high FEAR/PAIN exposures are self-chosen disciplines
+   (e.g. repeated GOAL entries describing training, practice, or exploration),
+   fairness metrics MUST treat these as voluntary, and downgrade proposals
+   MUST include additional evidence of involuntary overload (e.g. UNFAIRDRAIN,
+   HPCC/ERG/TECR decline beyond the subject's own stated thresholds), or be
+   denied."
+
+; 3. Require learning / reward, not only restriction.
+
+ROW,invariant,LEARN-FROM-DISCIPLINE,
+  "For any window where a subject endures sustained FEAR/PAIN by choice and
+   remains within RoH <= 0.3 and envelope limits, Pattern-I analytics agents
+   SHOULD:
+   - update models of that subject's safe ranges,
+   - log a 'discipline-evidence' record usable for future training or
+     knowledge-credit systems,
+   - and report these episodes to fairness panels as positive resilience,
+   not as risk alone."
+
+FOOTER,END-SECTION
