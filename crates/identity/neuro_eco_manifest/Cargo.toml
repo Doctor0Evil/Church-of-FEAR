@@ -1,0 +1,20 @@
+[package]
+name = "neuro_eco_manifest"
+version = "0.1.0"
+edition = "2021"
+description = "NeuroEcoIdentity manifest for neurorights + ecological accountability (inner/outer domains, RAF, Errority, bee-weighted polytopes)."
+license = "MIT OR Apache-2.0"
+authors = ["bostrom18sd2ujv24ual9c9pshtxys6j8knh6xaead9ye7"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+sha2 = "0.10"
+thiserror = "1"
+nalgebra = "0.32"
+chrono = { version = "0.4", features = ["serde"] }
+ed25519-dalek = "2"
+hex = "0.4"
+zeroize = "1"
+serde_json = "1"
+
+[dev-dependencies]
