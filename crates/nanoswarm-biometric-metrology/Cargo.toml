@@ -1,0 +1,18 @@
+[package]
+name = "nanoswarm-biometric-metrology"
+version = "0.1.0"
+edition = "2021"
+authors = ["Doctor0 (Church-of-FEAR stakeholder)"]
+description = "Rust-native, offline-first vampiric+neuromorphic cyberswarm metrology for Phoenix urban healthcare. Validates TD, D, MB using peer-reviewed protocols (nanoDSF 2021-2026, nanocalorimetry nW resolution, subcellular IR thermometry ≤85 nm). Nanosotin-polytopes = soliton-stabilized polyhedral scaffolds (nalgebra). Lyapunov-stable duty controllers enforce surplus-only actuation. Observer-only: logs DeedEvent, advisory CHURCH/eco-grant for homelessness-relief NPO sponsorship. Zero-harm, RoH ceiling respected. Ties to Tree-of-Life NATURE (CALM_STABLE surplus check)."
+license = "MIT"
+
+[dependencies]
+nalgebra = "0.33"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.10", features = ["v4", "serde"] }
+sha2 = "0.10"
+rand = "0.8"
+kml = "0.8"
+geo = "0.29"
