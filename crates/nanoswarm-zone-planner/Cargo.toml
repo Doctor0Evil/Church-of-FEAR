@@ -1,0 +1,16 @@
+[package]
+name = "nanoswarm-zone-planner"
+version = "0.1.0"
+edition = "2021"
+authors = ["Doctor0 (via Church-of-FEAR stakeholder)"]
+description = "Real-world ecological-sustainability & homelessness-relief tool for Phoenix Nanoswarm Zones. Generates safe grids, classifies rings, exports KML, logs DeedEvent for moral ledger & CHURCH advisory minting. Non-actuating observer-only design (Tree-of-Life NATURE predicates, RoH ceiling respected). Zero-harm, zero-control surfaces."
+
+[dependencies]
+geo = "0.29"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.10", features = ["v4", "serde"] }
+sha2 = "0.10"
+rand = "0.8"
+kml = "0.8"  # high-quality KML writer with StyleMap support
